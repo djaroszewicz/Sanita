@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sanita.API</name>
+    </assembly>
+    <members>
+        <member name="M:Sanita.API.Controllers.HealthChecksController.GetAsync">
+            <summary>
+            Check API health
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
