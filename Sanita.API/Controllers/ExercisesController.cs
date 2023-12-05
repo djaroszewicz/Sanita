@@ -1,73 +1,73 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Sanita.API.Models.Enums;
 using Sanita.API.Models;
 
 namespace Sanita.API.Controllers
 {
     [ApiController]
     [EnableCors("MyAllowSpecificOrigin")]
-    [Route("api/meals")]
-    public class MealsController : ControllerBase
+    [Route("api/exercises")]
+    public class ExercisesController : ControllerBase
     {
         /// <summary>
-        /// Get meals List
+        /// Get exercises List
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> GetMealsList()
+        public async Task<ActionResult<string>> GetExercisesList()
         {
-            return "Meals List";
+            return "Exercises List";
         }
 
         /// <summary>
-        /// Get random meal
+        /// Get exercise
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("get-random")]
+        [Route("{exerciseId}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> GetRandomMeal()
+        public async Task<ActionResult<string>> GetExercise(int exerciseId)
         {
-            return "Random meal";
+            return "Exercise";
         }
 
         /// <summary>
-        /// Upsert meal
+        /// Upsert exercise
         /// </summary>
         /// <returns></returns>
         [HttpPut]
-        [Route("{mealId?}")]
+        [Route("{exerciseId?}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType((StatusCodes.Status201Created))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> UpsertMeal(int mealId = 0)
+        public async Task<ActionResult<string>> UpsertExercise(int exerciseId = 0)
         {
-            if (mealId != 0)
+            //tu w parametrze pojdzie pewnie lista cwiczen, ale nie ma jeszcze modelu wiec daje poki co stringa
+            if (exerciseId != 0)
             {
-                return "Meal updated";
+                return "Exercise updated";
             }
-            return "Meal created";
+            return "Exercise created";
         }
 
         /// <summary>
-        /// Remove meal
+        /// Remove exercise
         /// </summary>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{mealId}")]
+        [Route("{exerciseId}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> RemoveMeal(int mealId)
+        public async Task<ActionResult<string>> RemoveExercise(int exerciseId)
         {
-            return "Meal deleted";
+            return "Exercise deleted";
         }
     }
 }
