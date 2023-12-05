@@ -4,9 +4,123 @@
         <name>Sanita.API</name>
     </assembly>
     <members>
+        <member name="M:Sanita.API.Controllers.BodyParametersController.GetUserBodyParameters(System.Int32)">
+            <summary>
+            Get user body parameters List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.BodyParametersController.GetUserBodyParameter(System.Int32,Sanita.API.Models.Enums.BodyParameters)">
+            <summary>
+            Get user body parameter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.BodyParametersController.SetBodyParameter(System.Int32,Sanita.API.Models.Enums.BodyParameters)">
+            <summary>
+            Set user body parameter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.ExercisesController.GetExercisesList">
+            <summary>
+            Get exercises List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.ExercisesController.GetExercise(System.Int32)">
+            <summary>
+            Get exercise
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.ExercisesController.UpsertExercise(System.Int32)">
+            <summary>
+            Upsert exercise
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.ExercisesController.RemoveExercise(System.Int32)">
+            <summary>
+            Remove exercise
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.FridgesController.GetAllProductList(System.Int32)">
+            <summary>
+            Get All Products with count
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.FridgesController.GetProductCount(System.Int32,System.Int32)">
+            <summary>
+            Get product quantity
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.FridgesController.AddProduct(System.Int32,System.Decimal,Sanita.API.Models.Enums.ProductUnit,System.Int32)">
+            <summary>
+            Put product to fridge
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.FridgesController.RemoveProduct(System.Int32,Sanita.API.Models.Enums.ProductUnit,System.Decimal)">
+            <summary>
+            Remove product from fridge
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Sanita.API.Controllers.HealthChecksController.GetAsync">
             <summary>
             Check API health
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.MealsController.GetMealsList">
+            <summary>
+            Get meals List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.MealsController.GetRandomMeal">
+            <summary>
+            Get random meal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.MealsController.UpsertMeal(System.Int32)">
+            <summary>
+            Upsert meal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.MealsController.RemoveMeal(System.Int32)">
+            <summary>
+            Remove meal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.TrainingsController.GetTrainingsList">
+            <summary>
+            Get trainings List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.TrainingsController.GetTraining(System.Int32)">
+            <summary>
+            Get training
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.TrainingsController.UpsertTraining(System.String,System.Int32)">
+            <summary>
+            Upsert training
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sanita.API.Controllers.TrainingsController.RemoveTraining(System.Int32)">
+            <summary>
+            Remove training
             </summary>
             <returns></returns>
         </member>
