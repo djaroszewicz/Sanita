@@ -1,73 +1,77 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Sanita.API.Models;
+using Sanita.API.Models.Enums;
 
 namespace Sanita.API.Controllers
 {
     [ApiController]
     [EnableCors("MyAllowSpecificOrigin")]
-    [Route("api/trainings")]
-    public class TrainingsController : ControllerBase
+    [Route("api/fridges")]
+    public class FridgesController : ControllerBase
     {
         /// <summary>
-        /// Get trainings List
+        /// Get All Products with count
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("{userId}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> GetTrainingsList()
+        public async Task<ActionResult<string>> GetAllProductList(int userId)
         {
-            return "Trainings List";
+            return "Products list quantity";
         }
 
+
         /// <summary>
-        /// Get training
+        /// Get product quantity
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("{trainingId}")]
+        [Route("{userId}/{productId}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> GetTraining(int trainingId)
+        public async Task<ActionResult<string>> GetProductCount(int userId, int productId)
         {
-            return "Training";
+            return "Product quantity";
         }
 
         /// <summary>
-        /// Upsert training
+        /// Put product to fridge
         /// </summary>
         /// <returns></returns>
         [HttpPut]
-        [Route("{trainingId?}/{exerciseList}")]
+        [Route("{userId}/{productId?}/{quantity}/{unit}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType((StatusCodes.Status201Created))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> UpsertTraining(string exerciseList, int trainingId = 0)
+        public async Task<ActionResult<string>> AddProduct(int userId, decimal quantity, ProductUnit unit, int productId = 0)
         {
-            //tu w parametrze pojdzie pewnie lista cwiczen, ale nie ma jeszcze modelu wiec daje poki co stringa
-            if (trainingId != 0)
+            //Tutaj zastanawiam się jeszcze nad podejsciem, czy rozdzielic na post/patch czy zostac przy opcji upsertu
+            if (productId != 0)
             {
-                return "Trainig updated";
+                return "Product updated";
             }
-            return "Training created";
+
+            return "Product created";
         }
 
         /// <summary>
-        /// Remove training
+        /// Remove product from fridge
         /// </summary>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{trainingId}")]
+        [Route("{id}/{quantity?}/{unit}")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> RemoveTraining(int trainingId)
+        public async Task<ActionResult<string>> RemoveProduct(int id, ProductUnit unit, decimal quantity = 0)
         {
-            return "Training deleted";
+            return "Product deleted";
         }
     }
 }

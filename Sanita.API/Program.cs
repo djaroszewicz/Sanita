@@ -8,9 +8,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(option =>
     option.AddPolicy(name: "MyAllowSpecificOrigin", builder =>
     {
-        //builder.AllowAnyOrigin();
-        builder.WithOrigins("https://localhost:44359");
+        builder.AllowAnyOrigin();
+        //builder.WithOrigins("https://localhost:7001");
     }));
+
+//Tutaj cala konfiguracja zmieni sie w pozniejszym etapie
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -47,7 +49,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 app.UseSwaggerUI();
-
+app.UseCors();
 app.UseHealthChecks("/hc");
 app.UseHttpsRedirection();
 
