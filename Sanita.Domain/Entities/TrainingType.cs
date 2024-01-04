@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Sanita.Domain.Entities
 {
-    public class Product : AuditableEntity
+    public class TrainingType : AuditableEntity
     {
-        public decimal Weight { get; set; }
-        public int ProductId { get; set; }
-        public ProductInfo ProductInfo { get; set; }
+        public string Name { get; set; }    
     }
 }

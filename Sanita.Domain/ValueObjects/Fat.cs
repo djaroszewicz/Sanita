@@ -39,7 +39,7 @@ namespace Sanita.Domain.ValueObjects
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            throw new NotImplementedException();
+            yield return Saturated; yield return Monounsaturated; yield return Polyunsaturated; yield return Omega3Acid; yield return Omega6Acid;   
         }
     }
 }

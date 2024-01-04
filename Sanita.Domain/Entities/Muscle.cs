@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sanita.Domain.Entities
 {
-    public class Fridge : AuditableEntity
+    public class Muscle : AuditableEntity
     {
         public string Name { get; set; }
-        public int UserId { get; set; }
-        public List<Product> Products { get; set; } = new List<Product>();
+        public List<Exercise> ExerciseList { get; set; }
     }
 }

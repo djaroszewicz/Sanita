@@ -22,9 +22,5 @@ namespace Sanita.Domain.Entities
         public decimal? Thigh { get; set; }
         public decimal? Calf { get; set; }
 
-
-
-
-
     }
 }

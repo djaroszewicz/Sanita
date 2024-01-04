@@ -13,6 +13,7 @@ namespace Sanita.Domain.Entities
         public string MovieUrl { get; set; }
         public int ExerciseTypeId { get; set; }
         public ExerciseType ExerciseType { get; set; }
+        public List<Muscle> Muscles { get; set; } = new List<Muscle>();
 
     }
 }

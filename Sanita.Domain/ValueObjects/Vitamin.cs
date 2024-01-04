@@ -1,4 +1,5 @@
 ﻿using Sanita.Domain.Common;
+using Sanita.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,51 @@ namespace Sanita.Domain.ValueObjects
         public decimal VitaminPP { get; set; }
         public decimal VitaminK { get; set; }
 
+        public static Vitamin For(decimal vitaminA, decimal vitaminB1, decimal vitaminB2, decimal vitaminB5,
+            decimal vitaminB6, decimal vitaminB12, decimal folidAcid, decimal biotin, decimal vitaminC, decimal vitaminD,
+            decimal vitaminE, decimal vitaminPP, decimal vitaminK)
+        {
+            var vitaminObj = new Vitamin();
+            try
+            {
+                vitaminObj.VitaminA = vitaminA;
+                vitaminObj.VitaminB1 = vitaminB1;
+                vitaminObj.VitaminB2 = vitaminB2;
+                vitaminObj.VitaminB5 = vitaminB5;
+                vitaminObj.VitaminB6 = vitaminB6;
+                vitaminObj.VitaminB12 = vitaminB12;
+                vitaminObj.FolidAcid = folidAcid;
+                vitaminObj.Biotin = biotin;
+                vitaminObj.VitaminC = vitaminC;
+                vitaminObj.VitaminD = vitaminD;
+                vitaminObj.VitaminE = vitaminE;
+                vitaminObj.VitaminPP = vitaminPP;
+                vitaminObj.VitaminK = vitaminK;
 
+            }
+            catch (Exception ex)
+            {
+                throw new VitaminException(ex);
+            }
+
+            return vitaminObj;
+        }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            throw new NotImplementedException();
+            yield return VitaminA;
+            yield return VitaminB1; 
+            yield return VitaminB2; 
+            yield return VitaminB5; 
+            yield return VitaminB6; 
+            yield return VitaminB12;
+            yield return FolidAcid; 
+            yield return Biotin; 
+            yield return VitaminC; 
+            yield return VitaminD; 
+            yield return VitaminE; 
+            yield return VitaminPP; 
+            yield return VitaminK;
         }
     }
 }

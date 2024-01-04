@@ -10,8 +10,8 @@ namespace Sanita.Domain.Entities
     public class Meal : AuditableEntity
     {
         public string Name { get; set; }
-        public int ProductId { get; set; }
-        public List<Product> Products { get; private set; } = new List<Product>();
+        public int MealProductId { get; set; }
+        public List<Product> MealProducts { get; private set; } = new List<Product>();
 
         public string Description { get; set; }
 

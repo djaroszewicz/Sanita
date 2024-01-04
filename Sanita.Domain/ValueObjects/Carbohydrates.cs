@@ -28,8 +28,6 @@ namespace Sanita.Domain.ValueObjects
                 carbohydratesnObj.Salt = salt;
                 carbohydratesnObj.Choresterol = choresterol;
                 carbohydratesnObj.Caffeine = caffeine;
-                //proteinObj.Total = animal + plant;
-
             }
             catch (Exception ex)
             {
@@ -42,7 +40,7 @@ namespace Sanita.Domain.ValueObjects
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            throw new NotImplementedException();
+            yield return CarbohydratesNetto; yield return Sugars; yield return Fiber; yield return Choresterol; yield return Salt; yield return Caffeine;
         }
     }
 }
