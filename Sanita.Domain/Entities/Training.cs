@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Sanita.Domain.Entities
 {
-    public class Exercise : AuditableEntity
+    public class Training : AuditableEntity
     {
         public string Name { get; set; }
-        public string MovieUrl { get; set; }
-        public int ExerciseTypeId { get; set; }
-        public ExerciseType ExerciseType { get; set; }
-
+        public int TrainingId { get; set; }  
+        public int ExerciseId { get; set; }
+        public List<Exercise> Exercises { get; private set; } = new List<Exercise>();
     }
 }
