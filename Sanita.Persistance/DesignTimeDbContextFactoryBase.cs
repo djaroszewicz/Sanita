@@ -13,7 +13,7 @@ namespace Sanita.Persistance
         public TContext CreateDbContext(string[] args)
         {
             var basePath = Directory.GetCurrentDirectory();
-
+            //var basePath = Directory.GetCurrentDirectory() + string.Format("{0}..{0}Sanita", Path.DirectorySeparatorChar, ConnectionStringName);
             return Create(basePath, Environment.GetEnvironmentVariable(AspNetCoreEnvironment));
         }
 
