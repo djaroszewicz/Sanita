@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sanita.Domain.Common;
+using Sanita.Domain.Entities;
 
 namespace Sanita.Persistance
 {
@@ -14,6 +15,16 @@ namespace Sanita.Persistance
         {               
                 
         }
+
+        public DbSet<BodyParameter> BodyParameters { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
+        public DbSet<ExerciseType> ExerciseTypes { get; set; }
+        public DbSet<Fridge> Fridges { get; set; }
+        public DbSet<Meal> Meals { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductInfo> ProductInfo { get; set; }
+        public DbSet<Training> Trainings { get; set; }
+        public DbSet<TrainingType> TrainingTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

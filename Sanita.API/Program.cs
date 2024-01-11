@@ -1,4 +1,8 @@
+using Sanita.Persistance;
+
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
+IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
 
@@ -38,6 +42,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddHealthChecks();
+builder.Services.AddPersistance(configuration);
 
 var app = builder.Build();
 
