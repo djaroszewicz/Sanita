@@ -35,6 +35,7 @@ namespace Sanita.Persistance
             modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Vitamin);
             modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Mineral);
 
+            modelBuilder.SeedData();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
