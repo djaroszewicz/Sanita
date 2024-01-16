@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Sanita.Domain.Common;
 using Sanita.Domain.Entities;
 using Sanita.Domain.ValueObjects;
+using System.Reflection;
 
 namespace Sanita.Persistance
 {
@@ -29,12 +30,7 @@ namespace Sanita.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Protein);
-            modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Fat);
-            modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Carbohydrates);
-            modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Vitamin);
-            modelBuilder.Entity<ProductInfo>().OwnsOne(p => p.Mineral);
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.SeedData();
         }
 
