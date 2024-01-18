@@ -10,7 +10,7 @@ namespace Sanita.Domain.Entities
     public class Product : AuditableEntity
     {
         public decimal Weight { get; set; }
-        public int ProductId { get; set; }
+        public int ProductInfoId { get; set; }
         public ProductInfo ProductInfo { get; set; }
     }
 }
