@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.API", "Sanita.API\Sanita.API.csproj", "{9A0D4155-7D9F-46A9-B607-ECFF95551C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanita.Application", "Sanita.Application\Sanita.Application.csproj", "{9FE0ABFD-78B0-4C7F-A7EC-131CB66A2A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.Application", "Sanita.Application\Sanita.Application.csproj", "{9FE0ABFD-78B0-4C7F-A7EC-131CB66A2A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanita.Common", "Sanita.Common\Sanita.Common.csproj", "{77F615CC-B24B-4A42-97CD-AC9ECCD11931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.Common", "Sanita.Common\Sanita.Common.csproj", "{77F615CC-B24B-4A42-97CD-AC9ECCD11931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanita.Domain", "Sanita.Domain\Sanita.Domain.csproj", "{0424D1BB-8DFD-4E29-AA67-0F0D2FB6A25E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.Domain", "Sanita.Domain\Sanita.Domain.csproj", "{0424D1BB-8DFD-4E29-AA67-0F0D2FB6A25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanita.Infrastructure", "Sanita.Infrastructure\Sanita.Infrastructure.csproj", "{C9FA86A2-A2A4-47A4-BE02-C627154A29E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.Infrastructure", "Sanita.Infrastructure\Sanita.Infrastructure.csproj", "{C9FA86A2-A2A4-47A4-BE02-C627154A29E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanita.Persistance", "Sanita.Persistance\Sanita.Persistance.csproj", "{24C8F188-2D0E-4BE1-90D6-B7552B390E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sanita.Persistance", "Sanita.Persistance\Sanita.Persistance.csproj", "{24C8F188-2D0E-4BE1-90D6-B7552B390E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
