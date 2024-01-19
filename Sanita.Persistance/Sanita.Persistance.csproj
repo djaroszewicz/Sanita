@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sanita.Application\Sanita.Application.csproj" />
     <ProjectReference Include="..\Sanita.Domain\Sanita.Domain.csproj" />
   </ItemGroup>
 
