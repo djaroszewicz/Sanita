@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sanita.Application.Common.Exceptions
+namespace Sanita.Application.Common.Interfaces
 {
     public interface IFileStore
     {
-        string SafeWriteFile(byte[] content, string sourceFileName, string path)
+        string SafeWriteFile(byte[] content, string sourceFileName, string path);
     }
 }

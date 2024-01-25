@@ -12,7 +12,7 @@ using Sanita.Application.Common.Interfaces;
 
 namespace Sanita.Persistance
 {
-    public class SanitaDbContext : DbContext
+    public class SanitaDbContext : DbContext, ISanitaDbContext
     {
         private readonly IDateTime _dateTime;
         public SanitaDbContext(DbContextOptions<SanitaDbContext> options, IDateTime dateTime) : base(options)
