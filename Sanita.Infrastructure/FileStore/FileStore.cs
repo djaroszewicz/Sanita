@@ -1,5 +1,4 @@
-﻿using Sanita.Application.Common.Exceptions;
-using Sanita.Application.Common.Interfaces;
+﻿using Sanita.Application.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

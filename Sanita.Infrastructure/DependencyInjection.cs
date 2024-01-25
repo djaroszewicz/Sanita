@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Sanita.Application.Common.Exceptions;
 using Sanita.Application.Common.Interfaces;
 using Sanita.Infrastructure.FileStore;
 using Sanita.Infrastructure.Services;
