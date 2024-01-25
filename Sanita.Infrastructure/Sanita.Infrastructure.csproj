@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Sanita.Application\Sanita.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ExternalAPI\" />
+  </ItemGroup>
+
 </Project>
