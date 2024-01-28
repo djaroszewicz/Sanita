@@ -15,6 +15,10 @@ namespace Sanita.Persistance
     public class SanitaDbContext : DbContext, ISanitaDbContext
     {
         private readonly IDateTime _dateTime;
+        public SanitaDbContext(DbContextOptions<SanitaDbContext> options) : base(options)
+        {
+        }
+
         public SanitaDbContext(DbContextOptions<SanitaDbContext> options, IDateTime dateTime) : base(options)
         {
             _dateTime = dateTime;  
