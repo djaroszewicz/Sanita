@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sanita.Application.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sanita.Persistance
 {
-    internal class SanitaDbContextFactory : DesignTimeDbContextFactoryBase<SanitaDbContext>
+    public class SanitaDbContextFactory : DesignTimeDbContextFactoryBase<SanitaDbContext>
     {
         protected override SanitaDbContext CreateNewInstance(DbContextOptions<SanitaDbContext> options)
         {
