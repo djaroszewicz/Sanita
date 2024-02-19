@@ -11,7 +11,7 @@ namespace Sanita.Application.BodyParameters.Queries.GetBodyParameterDetail
 {
     public class GetBodyParameterDetailQueryHandler : IRequestHandler<GetBodyParameterDetailQuery, BodyParameterDetailVm>
     {
-        private ISanitaDbContext _sanitaDbContext;
+        private readonly ISanitaDbContext _sanitaDbContext;
         public GetBodyParameterDetailQueryHandler(ISanitaDbContext sanitaDbContext)
         {
             _sanitaDbContext = sanitaDbContext;
