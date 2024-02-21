@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Sanita.API.Models;
 using Sanita.API.Models.Enums;
+using Sanita.Application.BodyParameters.Queries.GetBodyParameterDetail;
 
 namespace Sanita.API.Controllers
 {
-    [ApiController]
     [EnableCors("MyAllowSpecificOrigin")]
     [Route("api/body-parameters")]
-    public class BodyParametersController : ControllerBase
+    public class BodyParametersController : BaseController
     {
         /// <summary>
         /// Get user body parameters List
@@ -19,9 +19,10 @@ namespace Sanita.API.Controllers
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> GetUserBodyParameters(int userId)
+        public async Task<ActionResult<BodyParameterDetailVm>> GetUserBodyParametersDetails(int userId)
         {
-            return "weight: 5, height: 5, abdominal-circumference: 5, thigh-circumference: 5";
+            var vm = await Mediator.Send(new GetBodyParameterDetailQuery() { UserId = userId });
+            return vm;
         }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace Sanita.Application.BodyParameters.Commands.CreateBodyParameter
         {
             BodyParameter bodyParameter = new()
             {
+                UserId = 1,
                 Weigth = request.Weigth,
                 Heigth = request.Heigth,
                 Neck = request.Neck,
