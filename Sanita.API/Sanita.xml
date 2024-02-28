@@ -16,9 +16,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Sanita.API.Controllers.BodyParametersController.SetBodyParameter(System.Int32,Sanita.API.Models.Enums.BodyParameters)">
+        <member name="M:Sanita.API.Controllers.BodyParametersController.CreateBodyParameter(Sanita.Application.BodyParameters.Commands.CreateBodyParameter.CreateBodyParameterCommand)">
             <summary>
-            Set user body parameter
+            Create user body parameter
             </summary>
             <returns></returns>
         </member>

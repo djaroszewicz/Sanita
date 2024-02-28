@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Sanita.API.Models;
 using Sanita.API.Models.Enums;
+using Sanita.Application.BodyParameters.Commands.CreateBodyParameter;
 using Sanita.Application.BodyParameters.Queries.GetBodyParameterDetail;
 
 namespace Sanita.API.Controllers
@@ -40,18 +41,20 @@ namespace Sanita.API.Controllers
         }
 
         /// <summary>
-        /// Set user body parameter
+        /// Create user body parameter
         /// </summary>
         /// <returns></returns>
-        [HttpPut]
-        [Route("{userId}/{parameterType}")]
+        [HttpPost]
+        //[Route("creat")]
         [ProducesResponseType((StatusCodes.Status200OK))]
         [ProducesResponseType((StatusCodes.Status201Created))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
         [ProducesResponseType((StatusCodes.Status404NotFound))]
-        public async Task<ActionResult<string>> SetBodyParameter(int userId, BodyParameters parameterType)
+        public async Task<ActionResult<string>> CreateBodyParameter(CreateBodyParameterCommand command)
         {
-            return "parameter-name: 5";
+            var result = await Mediator.Send(command);
+
+            return Ok(result);
         }
     }
 }
