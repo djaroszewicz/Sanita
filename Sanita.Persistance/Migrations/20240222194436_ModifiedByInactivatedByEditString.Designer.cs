@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sanita.Persistance;
 
@@ -11,9 +12,11 @@ using Sanita.Persistance;
 namespace Sanita.Persistance.Migrations
 {
     [DbContext(typeof(SanitaDbContext))]
-    partial class SanitaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240222194436_ModifiedByInactivatedByEditString")]
+    partial class ModifiedByInactivatedByEditString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

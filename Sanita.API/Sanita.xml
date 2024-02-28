@@ -4,7 +4,7 @@
         <name>Sanita.API</name>
     </assembly>
     <members>
-        <member name="M:Sanita.API.Controllers.BodyParametersController.GetUserBodyParameters(System.Int32)">
+        <member name="M:Sanita.API.Controllers.BodyParametersController.GetUserBodyParametersDetails(System.Int32)">
             <summary>
             Get user body parameters List
             </summary>
@@ -16,9 +16,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Sanita.API.Controllers.BodyParametersController.SetBodyParameter(System.Int32,Sanita.API.Models.Enums.BodyParameters)">
+        <member name="M:Sanita.API.Controllers.BodyParametersController.CreateBodyParameter(Sanita.Application.BodyParameters.Commands.CreateBodyParameter.CreateBodyParameterCommand)">
             <summary>
-            Set user body parameter
+            Create user body parameter
             </summary>
             <returns></returns>
         </member>
