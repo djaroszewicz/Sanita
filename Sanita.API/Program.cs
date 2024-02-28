@@ -1,10 +1,15 @@
+using Sanita.Application;
 using Sanita.Persistance;
+using Sanita.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(configuration);
+builder.Services.AddPersistance(configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -42,7 +47,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddHealthChecks();
-builder.Services.AddPersistance(configuration);
 
 var app = builder.Build();
 

@@ -13,11 +13,11 @@ namespace Sanita.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistance(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IFileStore, FileStore.FileStore>();
-            services.AddTransient<IFileWrapper, IFileWrapper>();
+            services.AddTransient<IFileWrapper, FileWrapper>();
             services.AddTransient<IDirectoryWrapper, DirectoryWrapper>();
 
             return services;

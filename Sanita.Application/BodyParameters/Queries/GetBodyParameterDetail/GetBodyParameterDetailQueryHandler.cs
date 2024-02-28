@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Sanita.Application.Common.Interfaces;
 using System;
@@ -11,29 +12,18 @@ namespace Sanita.Application.BodyParameters.Queries.GetBodyParameterDetail
 {
     public class GetBodyParameterDetailQueryHandler : IRequestHandler<GetBodyParameterDetailQuery, BodyParameterDetailVm>
     {
-        private ISanitaDbContext _sanitaDbContext;
-        public GetBodyParameterDetailQueryHandler(ISanitaDbContext sanitaDbContext)
+        private readonly ISanitaDbContext _sanitaDbContext;
+        private IMapper _mapper;
+        public GetBodyParameterDetailQueryHandler(ISanitaDbContext sanitaDbContext, IMapper mapper)
         {
             _sanitaDbContext = sanitaDbContext;
+            _mapper = mapper;
         }
         public async Task<BodyParameterDetailVm> Handle(GetBodyParameterDetailQuery request, CancellationToken cancellationToken)
         {
             var bodyParameter = await _sanitaDbContext.BodyParameters.Where(b => b.UserId == request.UserId).FirstOrDefaultAsync(cancellationToken);
 
-            var bodyParameterVm = new BodyParameterDetailVm
-            {
-                Weigth = bodyParameter.Weigth,
-                Heigth = bodyParameter.Heigth,
-                Neck = bodyParameter.Neck,
-                Chest = bodyParameter.Chest,
-                Waist = bodyParameter.Waist,
-                Stomach = bodyParameter.Stomach,
-                Hips = bodyParameter.Hips,
-                Biceps = bodyParameter.Biceps,
-                Forearm = bodyParameter.Forearm,
-                Thigh = bodyParameter.Thigh,
-                Calf = bodyParameter.Calf
-            };
+            var bodyParameterVm = _mapper.Map<BodyParameterDetailVm>(bodyParameter);
 
             return bodyParameterVm;
         }

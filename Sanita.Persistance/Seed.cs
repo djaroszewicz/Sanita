@@ -18,7 +18,10 @@ namespace Sanita.Persistance
                 {
                     Id = 1,
                     UserId = 1,
-                    Created = DateTime.Now
+                    Created = DateTime.Now,
+                    CreatedBy = "test",
+                    InactivatedBy = "test",
+                    ModifiedBy = "test"
 
                 });
             });
